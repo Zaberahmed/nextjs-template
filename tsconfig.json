@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    /* If your code runs in the DOM: */
+    "lib": ["dom", "dom.iterable", "esnext"],
+
+    /* If NOT transpiling with TypeScript: */
+    "module": "esnext",
+    "noEmit": true,
+
+    /* Base Options: */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+
+    /* Strictness */
+    "strict": false,
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "strictNullChecks": true,
+
+    /*Others*/
+    "incremental": true,
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "noFallthroughCasesInSwitch": true,
+    "useUnknownInCatchVariables": false,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "plugins": [
+      {
+        "name": "next",
+      },
+    ],
+
+    "baseUrl": ".",
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@components/*": ["src/components/*"],
+      "@utils": ["src/utils.ts"],
+    },
+  },
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"],
+}

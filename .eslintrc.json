@@ -1,0 +1,110 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
+  "plugins": ["prettier", "@typescript-eslint", "react-hooks", "perfectionist"],
+  "globals": {
+    "React": "readonly"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "import/prefer-default-export": "error",
+    "prettier/prettier": ["error"],
+
+    "no-alert": "error",
+    "no-console": ["error", { "allow": ["error"] }],
+    "no-irregular-whitespace": "warn",
+    "no-self-assign": "error",
+    "no-self-compare": "error",
+    "no-unneeded-ternary": "warn",
+    "camelcase": "error",
+    "no-unused-vars": "warn",
+    "no-param-reassign": "error",
+    "no-underscore-dangle": ["error", { "allowFunctionParams": true }],
+    "no-promise-executor-return": "error",
+    "no-dupe-keys": "warn",
+
+    "react/no-children-prop": "error",
+    "react/no-array-index-key": "error",
+    "react/require-default-props": "error",
+    "react/function-component-definition": "error",
+    "react/jsx-no-useless-fragment": ["error"],
+    "react/no-unstable-nested-components": [
+      "warn",
+      {
+        "allowAsProps": true
+      }
+    ],
+    "react/jsx-no-duplicate-props": ["error"],
+
+    "jsx-a11y/control-has-associated-label": "error",
+    "jsx-a11y/anchor-is-valid": "error",
+
+    "@typescript-eslint/no-use-before-define": "error",
+
+    // perfectionist
+    // https://eslint-plugin-perfectionist.azat.io/
+    "perfectionist/sort-named-imports": [
+      1,
+      {
+        "order": "asc",
+        "type": "line-length"
+      }
+    ],
+    "perfectionist/sort-named-exports": [
+      1,
+      {
+        "order": "asc",
+        "type": "line-length"
+      }
+    ],
+    "perfectionist/sort-exports": [
+      1,
+      {
+        "order": "asc",
+        "type": "line-length"
+      }
+    ],
+    "perfectionist/sort-imports": [
+      1,
+      {
+        "order": "asc",
+        "type": "line-length",
+        "newlines-between": "always",
+        "groups": [
+          ["builtin", "external"],
+          "custom-mui",
+          "custom-routes",
+          "custom-hooks",
+          "custom-utils",
+          "internal",
+          "custom-components",
+          "custom-sections",
+          "custom-types",
+          ["parent", "sibling", "index"],
+          "object",
+          "unknown"
+        ],
+        "custom-groups": {
+          "value": {
+            "custom-mui": "@mui/**",
+            "custom-routes": "src/routes/**",
+            "custom-hooks": "src/hooks/**",
+            "custom-utils": "src/utils/**",
+            "custom-components": "src/components/**",
+            "custom-sections": "src/sections/**",
+            "custom-types": "src/types/**"
+          }
+        },
+        "internal-pattern": ["src/**"]
+      }
+    ]
+  }
+}
